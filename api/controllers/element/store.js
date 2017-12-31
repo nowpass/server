@@ -16,6 +16,12 @@ module.exports = {
             description: 'Which kind of account / password element do we store?'
         },
 
+        group: {
+            type: 'string',
+            defaultsTo: '',
+            description: 'Optional grouping.'
+        },
+
         title: {
             type: 'string',
             defaultsTo: 'Untitled',
@@ -78,6 +84,7 @@ module.exports = {
         let newElement = await Element.create(Object.assign({
                 user_id: this.req.me.id,
                 kind: inputs.kind,
+                group: inputs.group,
                 title: inputs.title,
                 url: inputs.url,
                 username: inputs.username,

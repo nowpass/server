@@ -30,6 +30,12 @@ module.exports = {
             description: 'Which kind of account / password element do we store?'
         },
 
+        group: {
+            type: 'string',
+            defaultsTo: '',
+            description: 'Optional grouping.'
+        },
+
         title: {
             type: 'string',
             defaultsTo: 'Untitled',
@@ -61,8 +67,7 @@ module.exports = {
 
         comment: {
             type: 'string',
-            description: 'Comment for this Item.',
-            maxLength: 2000
+            description: 'Comment for this Item.'
         },
 
         status: {

@@ -18,31 +18,53 @@ module.exports = {
         let offset = this.req.param('offset', 0);
         let limit  = this.req.param('limit', 1000);
 
-        // Filter
+        // Searches all Columns (kind, title, url, comment, username etc.)
+        let filterSearch = this.req.param('search', '');
+
+        // Filter Single Elements
         let filterKind = this.req.param('kind', '');
         let filterTitle = this.req.param('title', '');
         let filterUrl = this.req.param('url', '');
         let filterComment = this.req.param('comment', '');
+
+        // Group / Category
+        let filterGroup = this.req.param('group', '');
+
+        // Ordering (Defaults to newest items first (performance))
+        let orderBy = this.req.param('order_by', 'id DESC');
+
+        let allowedOrderBy = ['id ASC', 'id DESC', 'createdAt ASC', 'createdAt DESC', 'title ASC', 'title DESC',
+            'url ASC', 'url DESC', 'username ASC', 'username DESC', 'modifiedAt ASC', 'modified DESC'];
+
+        // Check if it's a valid ordering
+        if (allowedOrderBy.indexOf(orderBy) === -1) {
+            sails.log.warn('Error unknown order by ' + orderBy);
+            orderBy = 'id DESC';
+        }
 
         // TODO Check values
         if (limit > 1000) {
             limit = 1000;
         }
 
-        let where = module.exports.filter(this.req.me.id, filterKind, filterTitle, filterUrl, filterComment);
+        let where = module.exports.filter(this.req.me.id, filterKind, filterTitle, filterUrl, filterComment, filterSearch, filterGroup);
 
-        console.log(where);
+        let total = await Element.count({
+           where: where
+        });
 
         let elements = await Element.find({
             where: where,
             skip: offset,
-            limit: limit
+            limit: limit,
+            sort: orderBy
         });
 
         sails.log.info('Query for Elements by ' + this.req.me.id + '.');
 
         return exits.success({
-            elements: elements
+            elements: elements,
+            total: total
         });
     },
 
@@ -56,13 +78,33 @@ module.exports = {
      * @param filterComment
      * @returns {{user_id: *}}
      */
-    filter: function (userId, filterKind, filterTitle, filterUrl, filterComment) {
+    filter: function (userId, filterKind, filterTitle, filterUrl, filterComment, filterSearch, filterGroup) {
         let where = {
             user_id: userId,
         };
 
         if (filterKind !== '') {
             where.kind = filterKind;
+        }
+
+        // Group is an AND
+        if (filterGroup !== '') {
+            where.group = filterGroup;
+        }
+
+        // When there is a global filter active skip others
+        if (filterSearch) {
+            where.or = [];
+
+            where.or.push(
+                {title: {'contains': filterSearch}},
+                {url: {'contains': filterSearch}},
+                {username: {'contains': filterSearch}},
+                {comment: {'contains': filterSearch}},
+                {group: {'contains': filterSearch}},
+            );
+
+            return where;
         }
 
         if (filterTitle === '' && filterUrl === '' && filterComment === '') {
@@ -77,11 +119,13 @@ module.exports = {
             }});
         }
 
-        if (filterUrl !== '') {
-            where.or.push({url : {
-                'contains': filterUrl
-            }});
+        if (filterGroup !== '') {
+            where.push({title : {
+                    'contains': filterTitle
+                }});
         }
+
+
 
         if (filterComment !== '') {
             where.or.push({comment : {

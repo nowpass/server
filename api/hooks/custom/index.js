@@ -151,7 +151,6 @@ will be disabled and/or hidden in the UI.
 
                         // Check if we have an API Ke
                         var apiKey = req.headers['api-key'];
-                        console.log(apiKey);
 
                         // Not logged in or no API key? Proceed as usual.
                         if (!req.session.userId && !apiKey) {
