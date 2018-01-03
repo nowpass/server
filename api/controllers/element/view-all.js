@@ -14,9 +14,15 @@ module.exports = {
         },
     },
 
+    /**
+     * TODO refactor
+     * @param inputs
+     * @param exits
+     * @returns {Promise<*|{description}|{description, outputVariableName, outputType}|{description, outputType}|{description, outputVariableName, outputExample}|{description, outputExample}>}
+     */
     fn: async function (inputs, exits) {
         let offset = this.req.param('offset', 0);
-        let limit  = this.req.param('limit', 1000);
+        let limit = this.req.param('limit', 1000);
 
         // Searches all Columns (kind, title, url, comment, username etc.)
         let filterSearch = this.req.param('search', '');
@@ -29,6 +35,9 @@ module.exports = {
 
         // Group / Category
         let filterGroup = this.req.param('group', '');
+
+        // Passwords only
+        let passwordsOnly = this.req.param('pw_only', '');
 
         // Ordering (Defaults to newest items first (performance))
         let orderBy = this.req.param('order_by', 'id DESC');
@@ -47,10 +56,21 @@ module.exports = {
             limit = 1000;
         }
 
-        let where = module.exports.filter(this.req.me.id, filterKind, filterTitle, filterUrl, filterComment, filterSearch, filterGroup);
+        let where = module.exports.filter(
+            this.req.me.id,
+            filterKind,
+            filterTitle,
+            filterUrl,
+            filterComment,
+            filterSearch,
+            filterGroup,
+            passwordsOnly
+        );
+
+        console.log(where);
 
         let total = await Element.count({
-           where: where
+            where: where
         });
 
         let elements = await Element.find({
@@ -69,7 +89,7 @@ module.exports = {
     },
 
     /**
-     * Filter for Element
+     * Filter for Element (TODO refactor too many filters now)
      *
      * @param userId
      * @param filterKind
@@ -78,17 +98,21 @@ module.exports = {
      * @param filterComment
      * @returns {{user_id: *}}
      */
-    filter: function (userId, filterKind, filterTitle, filterUrl, filterComment, filterSearch, filterGroup) {
+    filter: function (userId, filterKind, filterTitle, filterUrl, filterComment, filterSearch, filterGroup, passwordsOnly) {
         let where = {
             user_id: userId,
         };
 
-        if (filterKind !== '') {
+        if (filterKind) {
             where.kind = filterKind;
         }
 
+        if (passwordsOnly) {
+            where.password = {'!=' : ''}
+        }
+
         // Group is an AND
-        if (filterGroup !== '') {
+        if (filterGroup) {
             where.group = filterGroup;
         }
 
@@ -107,30 +131,35 @@ module.exports = {
             return where;
         }
 
-        if (filterTitle === '' && filterUrl === '' && filterComment === '') {
+        if (!filterTitle && !filterUrl && !filterComment) {
             return where;
         }
 
         where.or = [];
 
-        if (filterTitle !== '') {
-            where.or.push({title : {
-                'contains': filterTitle
-            }});
-        }
-
-        if (filterGroup !== '') {
-            where.push({title : {
+        if (filterTitle) {
+            where.or.push({
+                title: {
                     'contains': filterTitle
-                }});
+                }
+            });
         }
 
+        if (filterUrl) {
+            where.push({
+                title: {
+                    'contains': filterUrl
+                }
+            });
+        }
 
 
         if (filterComment !== '') {
-            where.or.push({comment : {
-                'contains': filterComment
-            }});
+            where.or.push({
+                comment: {
+                    'contains': filterComment
+                }
+            });
         }
 
         return where;

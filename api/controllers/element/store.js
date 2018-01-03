@@ -81,7 +81,12 @@ module.exports = {
             throw "titleIsRequired"
         }
 
-        let newElement = await Element.create(Object.assign({
+        let id = this.req.param('id', 0);
+        let element = null;
+
+        if (!id)
+        {
+            element = await Element.create(Object.assign({
                 user_id: this.req.me.id,
                 kind: inputs.kind,
                 group: inputs.group,
@@ -94,10 +99,26 @@ module.exports = {
                 status: inputs.status
             })).fetch();
 
-        sails.log.info('New Element ' + title + ' for user ' + this.req.me.id + ' has been added');
+            sails.log.info('New Element ' + title + ' for user ' + this.req.me.id + ' has been added');
+        } else {
+            element = await Element.update({
+                id: id,
+                user_id: this.req.me.id
+            }, {
+                // Should be checked before
+                group: inputs.group,
+                title: inputs.title,
+                url: inputs.url,
+                username: inputs.username,
+                password: inputs.password,
+                form_data: inputs.form_data,
+                comment: inputs.comment,
+                status: inputs.status
+            }).fetch();
+        }
 
         return exits.success({
-            element: newElement
+            element: element
         });
     }
 };
