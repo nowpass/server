@@ -56,6 +56,11 @@ module.exports.routes = {
     'POST  /api/v1/elements':       {action: 'element/store'},
     'PATCH /api/v1/elements/:id':   {action: 'element/store'},
 
+    // Notes
+    'GET   /api/v1/notes':       {action: 'note/view-all'},
+    'POST  /api/v1/notes':       {action: 'note/store'},
+    'PATCH /api/v1/notes/:id':   {action: 'note/store'},
+
 
     //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
     //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
