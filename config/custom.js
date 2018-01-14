@@ -51,19 +51,19 @@ module.exports.custom = {
   * (https://app.mailgun.com/app/domains)                                   *
   *                                                                         *
   **************************************************************************/
-  // mailgunDomain: 'sandboxaa1234fake678.mailgun.org',
-  // mailgunSecret: 'key-fakeb183848139913858e8abd9a3',
+  mailgunDomain: 'sandboxaa6085aa1dbd454b8d3bd35faf3a954d.mailgun.org',
+  mailgunSecret: 'key-651babc3487e80a7a0cc4d53b72ca85f',
   //--------------------------------------------------------------------------
   // /\  Configure these to enable support for automated emails.
   // ||  (Important for password recovery, verification, contact form, etc.)
   //--------------------------------------------------------------------------
 
   // The sender that all outgoing emails will appear to come from.
-  fromEmailAddress: 'noreply@example.com',
-  fromName: 'nowpass Team',
+  fromEmailAddress: 'noreply@nowpass.org',
+  fromName: 'NOWPASS Team',
 
   // Email address for receiving support messages & other correspondences.
-  internalEmailAddress: 'support+development@example.com',
+  internalEmailAddress: 'support+development@nowpass.org',
 
   // Whether to require proof of email address ownership any time a new user
   // signs up, or when an existing user attempts to change their email address.

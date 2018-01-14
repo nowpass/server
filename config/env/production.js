@@ -371,8 +371,8 @@ module.exports = {
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://example.com',
-    internalEmailAddress: 'y@localhost.com',
+    baseUrl: 'https://nowpass.org',
+    internalEmailAddress: 'dev@nowpass.org',
 
     // mailgunDomain: 'mg.example.com',
     // mailgunSecret: 'key-prod_fake_bd32301385130a0bafe030c',

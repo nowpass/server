@@ -21,7 +21,16 @@ module.exports.bootstrap = async function(done) {
   // locally on this development computer (if we happen to be on a development computer).
   var bootstrapLastRunInfoPath = path.resolve(sails.config.appPath, '.tmp/bootstrap-version.json');
 
-  // Whether or not to continue doing the stuff in this file (i.e. wiping and regenerating data)
+  try {
+    await User.createEach([
+        { emailAddress: 'admin@example.com', fullName: 'Super User', isSuperAdmin: true, password: await sails.helpers.passwords.hashPassword('abc123'), apiKey: 'jeronimo' },
+    ]);
+  } catch (err) {
+    // ignore
+  }
+
+
+    // Whether or not to continue doing the stuff in this file (i.e. wiping and regenerating data)
   // depends on some factors:
   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

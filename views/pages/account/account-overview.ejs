@@ -39,6 +39,27 @@
       <div class="col"><strong>••••••••••</strong></div>
     </div>
     <hr/>
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <h4>API-Key</h4>
+      </div>
+      <div class="col-sm-6">
+        <span class="float-sm-right">
+          <!-- TODO -->
+          <a class="btn btn-sm btn-outline-info account-settings-button" href="/account/new-apikey">Generate new</a>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        API-Key:
+      </div>
+      <div class="col">
+        {{me.apiKey}}
+      </div>
+    </div>
+
+
     <div class="row mb-3" v-if="isBillingEnabled">
       <div class="col-sm-6">
         <h4>Billing</h4>

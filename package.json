@@ -15,7 +15,8 @@
     "sails-hook-orm": "^2.0.0-16",
     "sails-hook-sockets": "^1.4.0",
     "sails-mysql": "^1.0.0-16",
-    "socket.io-redis": "5.2.0"
+    "socket.io-redis": "5.2.0",
+    "uniqid": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "4.11.0",

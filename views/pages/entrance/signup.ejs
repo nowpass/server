@@ -2,17 +2,19 @@
   <div class="container" v-if="!cloudSuccess">
     <h1 class="text-center">Create an account</h1>
     <div class="signup-form">
-      <p class="text-center">Let's get started! Becoming a member is free and only takes a few minutes.</p>
+      <p class="alert alert-info">Don't forget you are free to always use your own NOWPASS server or even local computer as backend server.</p>
+      <p class="text-left">Let's get started! Using NOWPASS is free and setting up an account takes only a few minutes.<br />
+      </p>
       <hr/>
       <ajax-form action="signup" :syncing.sync="syncing" :cloud-error.sync="cloudError" @submitted="submittedForm()" :handle-parsing="handleParsingForm">
         <div class="form-group">
           <label for="full-name">Full name</label>
-          <input class="form-control" id="full-name" autofocus type="text"  :class="[formErrors.fullName ? 'is-invalid' : '']" v-model.trim="formData.fullName" placeholder="Sturgis P. Sturgeon">
+          <input class="form-control" id="full-name" autofocus type="text"  :class="[formErrors.fullName ? 'is-invalid' : '']" v-model.trim="formData.fullName" placeholder="John Smith">
           <div class="invalid-feedback" v-if="formErrors.fullName">Please enter your full name.</div>
         </div>
         <div class="form-group">
           <label for="email-address">Email address</label>
-          <input class="form-control" id="email-address" type="email"  :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress" placeholder="sturgeon@example.com">
+          <input class="form-control" id="email-address" type="email"  :class="[formErrors.emailAddress ? 'is-invalid' : '']" v-model.trim="formData.emailAddress" placeholder="john.smith@example.com">
           <div class="invalid-feedback" v-if="formErrors.emailAddress">Please enter a valid email address.</div>
         </div>
         <div class="form-group">

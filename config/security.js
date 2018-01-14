@@ -33,7 +33,7 @@ module.exports.security = {
         allowOrigins: '*',
         allowAnyOriginWithCredentialsUnsafe: true,
         allowCredentials: true,
-        allowRequestHeaders: 'content-type, api-key',
+        allowRequestHeaders: 'content-type, api-key, X-CSRF-Token',
     },
 
 

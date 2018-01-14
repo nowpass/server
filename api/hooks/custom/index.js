@@ -139,15 +139,11 @@ will be disabled and/or hidden in the UI.
 
                         }//ﬁ
 
-                        console.log('Session check');
-
                         // No session? Proceed as usual.
                         // (e.g. request for a static asset)
                         if (!req.session) {
                             return next();
                         }
-
-                        console.log('Not logged in?');
 
                         // Check if we have an API Ke
                         var apiKey = req.headers['api-key'];
@@ -156,8 +152,6 @@ will be disabled and/or hidden in the UI.
                         if (!req.session.userId && !apiKey) {
                             return next();
                         }
-
-                        console.log('Logging user in');
 
                         // Otherwise, look up the logged-in user in API
                         if (!apiKey) {
@@ -169,10 +163,14 @@ will be disabled and/or hidden in the UI.
                                 apiKey: apiKey
                             });
 
+                            if (!loggedInUser) {
+                                return next();
+                            }
+
                             req.session.userId = loggedInUser.id;
                         }
 
-                        console.log('After Logging in');
+                        sails.log.info('User ' + loggedInUser.id + ' logged in');
 
                         // If the logged-in user has gone missing, log a warning,
                         // wipe the user id from the requesting user agent's session,

@@ -50,11 +50,15 @@ module.exports.routes = {
     'POST  /api/v1/entrance/update-password-and-login': {action: 'entrance/update-password-and-login'},
     'POST  /api/v1/deliver-contact-form-message': {action: 'deliver-contact-form-message'},
 
+    // CSRF
+    '/csrf-token': {action: 'security/grant-csrf-token'},
+
     // Elements
-    'GET   /api/v1/elements':       {action: 'element/view-all'},
-    'GET   /api/v1/elements/:id':   {action: 'element/view'},
-    'POST  /api/v1/elements':       {action: 'element/store'},
-    'PATCH /api/v1/elements/:id':   {action: 'element/store'},
+    'GET    /api/v1/elements':       {action: 'element/view-all'},
+    'GET    /api/v1/elements/:id':   {action: 'element/view'},
+    'POST   /api/v1/elements':       {action: 'element/store'},
+    'PATCH  /api/v1/elements/:id':   {action: 'element/store'},
+    'DELETE /api/v1/elements/:id':   {action: 'element/delete'},
 
     // Notes
     'GET   /api/v1/notes':       {action: 'note/view-all'},
