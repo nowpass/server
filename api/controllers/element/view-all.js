@@ -67,8 +67,6 @@ module.exports = {
             passwordsOnly
         );
 
-        console.log(where);
-
         let total = await Element.count({
             where: where
         });

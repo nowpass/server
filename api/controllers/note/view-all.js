@@ -59,8 +59,6 @@ module.exports = {
             );
         }
 
-        console.log(where);
-
         let total = await Note.count({
             where: where
         });

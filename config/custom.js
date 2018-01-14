@@ -51,8 +51,8 @@ module.exports.custom = {
   * (https://app.mailgun.com/app/domains)                                   *
   *                                                                         *
   **************************************************************************/
-  mailgunDomain: 'sandboxaa6085aa1dbd454b8d3bd35faf3a954d.mailgun.org',
-  mailgunSecret: 'key-651babc3487e80a7a0cc4d53b72ca85f',
+  mailgunDomain: 'sandboxZzd814nldl91104qor5911gjald',
+  mailgunSecret: 'key-Zzd814nldl91104qor5911gjald',
   //--------------------------------------------------------------------------
   // /\  Configure these to enable support for automated emails.
   // ||  (Important for password recovery, verification, contact form, etc.)
@@ -67,7 +67,7 @@ module.exports.custom = {
 
   // Whether to require proof of email address ownership any time a new user
   // signs up, or when an existing user attempts to change their email address.
-  verifyEmailAddresses: false,
+  verifyEmailAddresses: true,
 
   /**************************************************************************
   *                                                                         *
