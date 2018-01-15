@@ -28,7 +28,7 @@ npm install sails@beta -g
 After checking out the repository, you first have to install all needed dependencies.
 
 ```
-cd nowpass-api-server
+cd server
 npm install
 ```
 
