@@ -39,7 +39,8 @@ module.exports = {
         url: {
             type: 'string',
             description: 'URL (if any) where the note was taken.',
-            maxLength: 2000
+            maxLength: 2000,
+            columnType: 'varchar(2000)'
         },
 
         content: {

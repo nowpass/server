@@ -40,13 +40,14 @@ module.exports = {
             type: 'string',
             defaultsTo: 'Untitled',
             description: 'Title of the Element',
-            maxLength: 500
+            maxLength: 255
         },
 
         url: {
             type: 'string',
             description: 'URL (if any) where the login belongs to.',
-            maxLength: 2000
+            maxLength: 2000,
+            columnType: 'varchar(2000)'
         },
 
         username: {
@@ -62,12 +63,14 @@ module.exports = {
         form_data: {
             type: 'string',
             description: 'Serialized form data where the password was used (Optional)',
-            defaultsTo: ''
+            defaultsTo: '',
+            columnType: 'text'
         },
 
         comment: {
             type: 'string',
-            description: 'Comment for this Item.'
+            description: 'Comment for this Item.',
+            columnType: 'text'
         },
 
         status: {
