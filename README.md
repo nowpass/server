@@ -1,6 +1,6 @@
 # Nowpass RESTful API Backend server
 
-> Please note that NOWPASS is currently in an early alpha stage and ready for productive use.
+> Please note that NOWPASS is currently in an early alpha stage and not ready for productive use.
 
 The node / sails.js based backend server for the open source nowpass password manager. 
 You can use it to set up your own nowpass backend at your local computer or on an server.  
