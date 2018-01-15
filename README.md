@@ -1,6 +1,6 @@
-# Nowpass RESTful API Backend service
+# Nowpass RESTful API Backend server
 
-> Please note that NOWPASS is currently in an early alpha stage and not thought for productive use.
+> Please note that NOWPASS is currently in an early alpha stage and ready for productive use.
 
 The node / sails.js based backend server for the open source nowpass password manager. 
 You can use it to set up your own nowpass backend at your local computer or on an server.  
@@ -35,7 +35,7 @@ npm install
 After this set up your database (preconfigured is mysql, but you can use any database supported by waterfall ORM).
 You need to create the database manually.
 
-Edit `config/env/production.js` (or `config/env/staging.js` for development) and add your database adapter and URL:
+Edit `config/datastores.js` and `config/env/production.js` (or `config/env/staging.js` for development) and add your database adapter and URL:
 
 ```
 adapter: 'sails-mysql',

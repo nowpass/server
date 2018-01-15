@@ -1,8 +1,10 @@
 {
   "name": "nowpass",
   "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
+  "version": "0.1.0",
+  "description": "Open Source Password Manager",
+  "license": "GPL-3.0",
+  "author": "Yves Hoppe <yves.hoppe@nowpass.org>",
   "keywords": [],
   "dependencies": {
     "async": "2.0.1",
@@ -33,10 +35,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/g0ne/nowpass.git"
+    "url": "git://github.com/nowpass/server.git"
   },
-  "author": "g0ne",
-  "license": "",
   "engines": {
     "node": "8"
   }
