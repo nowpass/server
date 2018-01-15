@@ -4,7 +4,8 @@
         <div class="q-and-a">
             <hr/>
             <h4>What is NOWPASS?</h4>
-            <p>NOWPASS is an Open Source password manager.</p>
+            <p>NOWPASS is an Open Source password manager. It's divided into multiple projects, from the REST Api
+                server, over the browser extensions to the desktop and command line clients</p>
         </div>
 
         <div class="q-and-a">
@@ -25,7 +26,7 @@
                     <h5>With your own backend API server</h5>
                     <p>
                         Set up your own NOWPASS server locally or on a server. Check out the <a
-                                href="https://github.com/nowpass/api" target="_blank">GitHub repository</a>
+                                href="https://github.com/nowpass/server" target="_blank">GitHub repository</a>
                         for more information.
                     </p>
                 </li>
@@ -104,21 +105,6 @@
                 sandbox domain &amp; test API secret that comes with your Mailgun account. Just be sure to configure the
                 authorized recipents for your sandbox domain first, or there will be errors from the endpoints that
                 attempt to send emails.</p>
-        </div>
-        <div class="q-and-a">
-            <hr/>
-            <h4>How do I finish setting up Stripe?</h4>
-            <p>To use Stripe for your app's payment processing, you'll need to <a target="_blank"
-                                                                                  href="https://stripe.com">sign up for
-                    an account</a>.</p>
-            <p>Once you have an account, you'll need to include your publishable and secret keys in your app's custom
-                config as <code>sails.config.custom.stripePublishableKey</code> and <code>sails.config.custom.stripeSecret</code>.
-                In development, you can add your test keys to <code>config/custom.js</code>, or in a
-                <code>local.js</code> file you add to your <code>config/</code> folder.</p>
-            <p>In your staging or production deployment, you'll want to set your API keys using system environment
-                variables (aka "config variables" in Heroku), and you will need ensure that your site meets Stripe's
-                HTTPS requirements in order for Stripe Checkout to work. For more information, see Stripe's <a
-                        target="_blank" href="https://stripe.com/docs/checkout">Detailed Checkout Guide</a>.</p>
         </div>
 
         <div class="q-and-a">

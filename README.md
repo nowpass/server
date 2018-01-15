@@ -14,7 +14,7 @@ These instructions will get you a copy of the project up and running on your loc
 Clone the project or use one of the release. As a first step you must install all dependencies needed to run the application.
 
 ```
-git clone --depth 1 https://github.com/nowpass/nowpass-api-server
+git clone --depth 1 https://github.com/nowpass/server
 ```
 
 Install sails.js globally (optional):
@@ -56,7 +56,7 @@ Visit http://localhost:1337 to access the web frontend, manage / create users et
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nowpass/nowpass-api-server/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nowpass/server/tags). 
 
 ## License
 

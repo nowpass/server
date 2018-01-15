@@ -17,36 +17,37 @@
     <div class="about-wrapper">
         <div class="container">
             <div class="about text-center">
-                <h3>Your secure Open Source Password Manager.</h3>
+                <h3>Don't entrust your passwords to closed proprietary software or services</h3>
                 <p>
-                    Remembering all the passwords can
+                    NOWPASS is 100% Open Source software, always keeping your passwords save.
                 </p>
             </div>
             <div class="features text-center">
                 <div class="row">
                     <div class="feature col-sm">
                         <div class="icon">
-                            <i class="fa fa-envelope"></i>
+                            <i class="fa fa-code"></i>
                         </div>
-                        <h4>Emails</h4>
-                        <p class="text-muted">Built-in support for internal emails from the <a href="/contact">contact
-                                form</a>, as well as transactional emails for users.</p>
+                        <h4>Open Source</h4>
+                        <p class="text-muted">Every single part of NOWPASS is Open Source software, built on well known
+                            . You are in control!</p>
                     </div>
                     <div class="col-sm feature">
                         <div class="icon">
-                            <i class="fa fa-lock"></i>
+                            <i class="fa fa-fort-awesome"></i>
                         </div>
-                        <h4>Authentication</h4>
-                        <p class="text-muted">Ready-to-go, customizable <a href="/signup">sign up</a>, <a href="/login">login</a>,
-                            and <a href="/password/forgot">password recovery</a> flows for your users.</p>
+                        <h4>Secure</h4>
+                        <p class="text-muted">Your passwords are encrypted (AES-CBC-256) on your local device and are
+                            never
+                            submitted or stored in clear text.</p>
                     </div>
                     <div class="col-sm feature">
                         <div class="icon">
-                            <i class="fa fa-credit-card"></i>
+                            <i class="fa fa-cubes"></i>
                         </div>
-                        <h4>Billing</h4>
-                        <p class="text-muted">Hook up to your Stripe account for managing customers and payment
-                            sources.</p>
+                        <h4>Extensible</h4>
+                        <p class="text-muted">Extend NOWPASS with your own functionality and build your own clients on
+                            top.</p>
                     </div>
                 </div>
                 <a class="btn btn-outline-info mt-5" href="/faq">Learn more</a>
@@ -56,6 +57,10 @@
     <div class="container">
         <div class="setup" role="scroll-destination">
             <h3 class="text-center">How to get started:</h3>
+            <div class="alert alert-warning">
+                Please note that NOWPASS is still in an very early alpha version. Not all features are implemented and
+                it's not meant for production use.
+            </div>
             <div class="step">
                 <div class="step-image">
                     <img alt="computer with email symbol on screen" src="/images/setup-email.png"/>
@@ -71,7 +76,7 @@
                     <li>
                         <strong>Self hosted REST API service</strong>
                         <p>
-                            Checkout the <a href="https://github.com/nowpass/api">GitHub project page</a>
+                            Checkout the <a href="https://github.com/nowpass/server">GitHub project page</a>
                             and README.md for further instructions on how to set up an own backend API server.
                         </p>
                     </li>
@@ -87,27 +92,43 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="download">
-            <h3 class="text-center">Download the Clients</h3>
-            <div class="row">
-                <div class="col-4">
-                    <strong><a href="">Google Chrome Extension</a></strong>
-                    <p>
-                        Store and manage your passwords and more directly from your browser.
-                    </p>
-                </div>
-                <div class="col-4">
-                    <strong><a href="">Desktop Application for Linux, Mac OS and Windows</a></strong>
-                    <p>
-                        Manage your passwords in a standalone application.
-                    </p>
-                </div>
-                <div class="col-4">
-                    <strong><a href="">Command Line Client</a></strong>
-                    <p>
-                        Python command line client for storing, managing and searching for your passwords.
-                    </p>
+    <div class="download-wrapper">
+        <div class="container">
+            <div class="download">
+                <h3 class="text-center">Download the Clients</h3>
+                <div class="row text-center">
+                    <div class="col-4">
+                        <a href="https://downloads.nowpass.org/chromium/latest.zip">
+                            <img src="/images/nowpass-chrome-thumb.jpg" alt="Nowpass Chrome Extension" class="img-fluid"/>
+
+                            <h5>Google Chrome Extension</h5>
+                        </a>
+                        <p>
+                            Store and manage your passwords directly from your browser. Works with Chromium,
+                            Vivaldi, Opera ..
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <a href="https://downloads.nowpass.org/cli/latest.zip">
+                            <img src="/images/python-cli-thumb.jpg" alt="NOWPASS command line client" class="img-fluid"/>
+
+                            <h5>Command Line Client</h5>
+                        </a>
+                        <p>
+                            Python command line client for storing, managing and searching for your passwords.
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <a href="https://downloads.nowpass.org/desktop/latest.zip">
+                            <img src="/images/nowpass-desktop-thumb.jpg" alt="NOWPASS Desktop Application" class="img-fluid"/>
+
+                            <h5>Desktop Application</h5>
+                        </a>
+
+                        <p>
+                            Manage your passwords in a standalone application for Linux, Mac OS and Windows.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
