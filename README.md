@@ -51,7 +51,7 @@ after this you can run the service with:
 sails lift
 ```
 
-Visit http://localhost:1337 to access the web frontend, manage / create users etc.
+Visit http://localhost:1337 to access the web frontend, manage or create users etc.
 
 
 ## Versioning
