@@ -144,7 +144,7 @@ module.exports = {
         }
 
         if (filterUrl) {
-            where.push({
+            where.or.push({
                 title: {
                     'contains': filterUrl
                 }
