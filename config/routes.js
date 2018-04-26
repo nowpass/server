@@ -65,7 +65,13 @@ module.exports.routes = {
     'GET   /api/v1/notes':       {action: 'note/view-all'},
     'POST  /api/v1/notes':       {action: 'note/store'},
     'PATCH /api/v1/notes/:id':   {action: 'note/store'},
+    'DELETE /api/v1/notes/:id':   {action: 'note/delete'},
 
+    // Sites
+  'GET   /api/v1/sites':       {action: 'site/view-all'},
+  'POST  /api/v1/sites':       {action: 'site/store'},
+  'PATCH /api/v1/sites/:id':   {action: 'site/store'},
+  'DELETE /api/v1/sites/:id':   {action: 'site/delete'},
 
     //  ╦ ╦╔═╗╔╗ ╦ ╦╔═╗╔═╗╦╔═╔═╗
     //  ║║║║╣ ╠╩╗╠═╣║ ║║ ║╠╩╗╚═╗
