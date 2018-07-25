@@ -20,7 +20,7 @@ git clone --depth 1 https://github.com/nowpass/server
 Install sails.js globally (optional):
 
 ```
-npm install sails@beta -g
+npm install sails -g
 ```
 
 ### Installing

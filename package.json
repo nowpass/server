@@ -10,19 +10,19 @@
     "async": "2.0.1",
     "connect-redis": "3.2.0",
     "lodash": "3.10.1",
-    "sails": "^1.0.1",
+    "sails": "^1.0.2",
     "sails-generate-auth": "^0.3.1",
     "sails-hook-apianalytics": "^2.0.0",
-    "sails-hook-organics": "^0.13.0",
-    "sails-hook-orm": "^2.0.0",
-    "sails-hook-sockets": "^1.5.2",
+    "sails-hook-organics": "^0.14.5",
+    "sails-hook-orm": "^2.1.0",
+    "sails-hook-sockets": "^1.5.3",
     "sails-mysql": "^1.0.0",
     "socket.io-redis": "5.2.0",
     "uniqid": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "4.11.0",
-    "grunt": "1.0.1",
+    "grunt": "^1.0.3",
     "sails-hook-grunt": "^2.2.1"
   },
   "scripts": {
