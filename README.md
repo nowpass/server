@@ -1,9 +1,9 @@
-# Nowpass RESTful API Backend server
+# NOWPASS API Backend server
 
-> Please note that NOWPASS is currently in an early alpha stage and not ready for productive use.
+> Please note that NOWPASS is currently in alpha stage.
 
-The node / sails.js based backend server for the open source nowpass password manager. 
-You can use it to set up your own nowpass backend at your local computer or on an server.  
+The node / sails.js based backend server for the open source NOWPASS password manager.
+You can use it to set up your own NOWPASS backend at your local computer or on an server.
 
 ## Getting Started
 
@@ -56,7 +56,7 @@ Visit http://localhost:1337 to access the web frontend, manage or create users e
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nowpass/server/tags). 
+We follow [SemVer](http://semver.org/) for releases. For the versions available, see the [tags on this repository](https://github.com/nowpass/server/tags).
 
 ## License
 

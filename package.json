@@ -1,7 +1,7 @@
 {
   "name": "nowpass",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Open Source Password Manager",
   "license": "GPL-3.0",
   "author": "Yves Hoppe <yves.hoppe@nowpass.org>",
@@ -21,9 +21,9 @@
     "uniqid": "^4.1.1"
   },
   "devDependencies": {
-    "eslint": "^5.12.1",
-    "grunt": "^1.0.3",
-    "sails-hook-grunt": "^3.1.0"
+    "eslint": "^5.16.0",
+    "grunt": "^1.0.4",
+    "sails-hook-grunt": "^3.1.1"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
