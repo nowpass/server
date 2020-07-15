@@ -9,7 +9,7 @@
   "dependencies": {
     "async": "2.0.1",
     "connect-redis": "3.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "sails": "^1.0.2",
     "sails-generate-auth": "^0.3.1",
     "sails-hook-apianalytics": "^2.0.0",
