@@ -7,7 +7,7 @@
   "author": "Yves Hoppe <yves.hoppe@nowpass.org>",
   "keywords": [],
   "dependencies": {
-    "async": "2.0.1",
+    "async": "3.2.2",
     "connect-redis": "3.2.0",
     "lodash": "^4.17.11",
     "sails": "^1.0.2",
